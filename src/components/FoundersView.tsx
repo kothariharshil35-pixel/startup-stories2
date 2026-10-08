@@ -22,8 +22,11 @@ export const FoundersView: React.FC<FoundersViewProps> = ({ onSelectStory }) => 
           <h1 className="font-headline text-4xl sm:text-5xl font-black text-[#0B1F3A] tracking-tight">
             Meet the Founders
           </h1>
-          <p className="text-stone-600 text-base sm:text-lg mt-3 font-sans leading-relaxed">
-            The visionary entrepreneurs behind India's boldest enterprises. Explore their educational journeys, early operating struggles, leadership philosophies, and company building playbooks.
+          <h2 className="font-headline text-lg sm:text-xl font-bold text-[#0B1F3A] mt-3">
+            Who Are the Founders Shaping India's Startup Revolution?
+          </h2>
+          <p className="text-stone-600 text-sm mt-1 font-sans leading-relaxed">
+            From bootstrapped pioneers to tech innovators, these entrepreneurs identified structural friction and built generational enterprises across India.
           </p>
         </div>
 
@@ -95,7 +98,7 @@ export const FoundersView: React.FC<FoundersViewProps> = ({ onSelectStory }) => 
                   onClick={() => onSelectStory(founder.companyId)}
                   className="font-headline font-bold text-xs text-[#0B1F3A] group-hover:text-[#FF7A00] flex items-center gap-1.5 transition-colors cursor-pointer"
                 >
-                  <span>View Founder Story</span>
+                  <span>Read {founder.name} Founder Story</span>
                   <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
                 </button>
               </div>

@@ -13,7 +13,7 @@ export const StatisticsSection: React.FC = () => {
             Macro Landscape
           </div>
           <h2 className="font-headline text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
-            India's Startup Ecosystem
+            What Does India's Macro Startup Ecosystem Look Like?
           </h2>
           <p className="text-stone-300 text-sm mt-2 font-sans">
             Official figures published by Startup India and the Department for Promotion of Industry and Internal Trade (DPIIT) reflecting the nationwide entrepreneurial footprint.

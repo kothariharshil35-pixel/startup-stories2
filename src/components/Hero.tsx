@@ -86,7 +86,7 @@ export const Hero: React.FC<HeroProps> = ({
                 <img
                   src="https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?auto=format&fit=crop&w=1000&q=80"
                   alt="Indian Fintech & Technology trading floor"
-                  className="w-full h-80 sm:h-96 object-cover group-hover:scale-105 transition-transform duration-500"
+                  className="w-full h-56 sm:h-64 object-cover group-hover:scale-105 transition-transform duration-500"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#0B1F3A] via-[#0B1F3A]/40 to-transparent" />
                 

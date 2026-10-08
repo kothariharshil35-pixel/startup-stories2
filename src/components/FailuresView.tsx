@@ -91,7 +91,7 @@ export const FailuresView: React.FC<FailuresViewProps> = () => {
             </div>
 
             <h2 className="font-headline text-2xl sm:text-3xl lg:text-4xl font-extrabold text-[#0B1F3A] mb-3">
-              {activeFailure.startup}
+              Why Did {activeFailure.startup} Face Critical Challenges?
             </h2>
 
             <p className="font-editorial text-lg text-stone-700 italic leading-relaxed mb-6">

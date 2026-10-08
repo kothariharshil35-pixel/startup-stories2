@@ -81,7 +81,7 @@ export const IndustriesView: React.FC<IndustriesViewProps> = ({
                   SECTOR PROFILE
                 </span>
                 <h2 className="font-headline text-2xl sm:text-3xl font-extrabold text-[#0B1F3A]">
-                  {activeInd.name}
+                  What Defines India's {activeInd.name} Sector?
                 </h2>
                 <p className="text-xs text-stone-500 font-sans mt-0.5">{activeInd.tagline}</p>
               </div>

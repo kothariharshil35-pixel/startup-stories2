@@ -84,7 +84,7 @@ export const MarketingView: React.FC<MarketingViewProps> = ({ onSelectStory }) =
                 </div>
 
                 <h2 className="font-headline font-black text-2xl sm:text-3xl lg:text-4xl text-[#0B1F3A] leading-tight mb-4">
-                  {activeStudy.title}
+                  {activeStudy.title}: How Was It Executed?
                 </h2>
 
                 <p className="font-editorial text-lg text-stone-700 italic leading-relaxed">
@@ -110,11 +110,11 @@ export const MarketingView: React.FC<MarketingViewProps> = ({ onSelectStory }) =
               </div>
             </div>
 
-            <div className="lg:col-span-5 bg-stone-900 overflow-hidden">
+            <div className="lg:col-span-5 bg-stone-900 overflow-hidden flex items-center justify-center">
               <img
                 src={activeStudy.heroImage}
                 alt={activeStudy.title}
-                className="w-full h-full min-h-[280px] object-cover opacity-90 hover:scale-103 transition-transform duration-500"
+                className="w-full h-48 sm:h-52 md:h-56 object-cover opacity-90 hover:scale-103 transition-transform duration-500"
               />
             </div>
           </div>

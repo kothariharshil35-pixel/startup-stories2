@@ -34,8 +34,11 @@ export const FundingView: React.FC<FundingViewProps> = ({ onSelectStory }) => {
           <h1 className="font-headline text-4xl sm:text-5xl font-black text-[#0B1F3A] tracking-tight">
             Startup Funding Tracker
           </h1>
-          <p className="text-stone-600 text-base sm:text-lg mt-3 font-sans leading-relaxed">
-            A verified comparative ledger of capital raised, public listings, and bootstrapped capitalization models across India's premier enterprises.
+          <h2 className="font-headline text-lg sm:text-xl font-bold text-[#0B1F3A] mt-3">
+            How Are Indian Startup Funding Rounds Verified and Tracked?
+          </h2>
+          <p className="text-stone-600 text-sm mt-1 font-sans leading-relaxed">
+            Every entry in our ledger is reconciled against statutory Registrar of Companies (ROC) disclosures, SEBI prospectuses, and stock exchange notifications. Speculative rumors are excluded.
           </p>
 
           {/* Verification Disclaimer Banner strictly per Section 16 */}

@@ -17,8 +17,8 @@ export const StoryCard: React.FC<StoryCardProps> = ({
 }) => {
   return (
     <article className="bg-white border border-stone-200 hover:border-stone-400 rounded-xs shadow-xs hover:shadow-md transition-all flex flex-col justify-between overflow-hidden group">
-      {/* Visual Thumbnail */}
-      <div className="relative overflow-hidden bg-stone-100 aspect-16/9">
+      {/* Visual Thumbnail (Compact Height) */}
+      <div className="relative overflow-hidden bg-stone-100 h-36 sm:h-40 w-full">
         <img
           src={story.heroImage.url}
           alt={story.title}
@@ -93,7 +93,7 @@ export const StoryCard: React.FC<StoryCardProps> = ({
             onClick={() => onReadStory(story.id)}
             className="text-xs font-bold text-[#0B1F3A] group-hover:text-[#FF7A00] flex items-center gap-1 transition-colors cursor-pointer shrink-0"
           >
-            <span>Read Story</span>
+            <span>Read {story.company} Story</span>
             <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
           </button>
         </div>

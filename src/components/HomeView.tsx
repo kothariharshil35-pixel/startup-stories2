@@ -45,7 +45,7 @@ export const HomeView: React.FC<HomeViewProps> = ({
                 Launch Collection
               </div>
               <h2 className="font-headline text-3xl sm:text-4xl font-extrabold text-[#0B1F3A] tracking-tight">
-                10 Startup Stories
+                Which 10 Startup Stories Define the Indian Ecosystem?
               </h2>
               <p className="text-stone-500 text-sm mt-1 font-sans">
                 Forensic, source-verified case studies spanning FinTech, FoodTech, E-commerce, EdTech, D2C, and Hospitality.
@@ -93,7 +93,7 @@ export const HomeView: React.FC<HomeViewProps> = ({
                 Founding Visionaries
               </div>
               <h2 className="font-headline text-3xl sm:text-4xl font-extrabold text-[#0B1F3A] tracking-tight">
-                Meet the Founders
+                Who Are the Visionary Founders Behind India's Startups?
               </h2>
               <p className="text-stone-500 text-sm mt-1 font-sans">
                 The leaders who identified tolerated consumer friction and built enduring market institutions.
@@ -136,7 +136,7 @@ export const HomeView: React.FC<HomeViewProps> = ({
                 </div>
                 <div className="mt-4 pt-3 border-t border-stone-200 text-center">
                   <span className="font-headline font-bold text-xs text-[#0B1F3A] group-hover:text-[#FF7A00] flex items-center justify-center gap-1">
-                    <span>View Story</span>
+                    <span>Read {founder.name} Story</span>
                     <ArrowRight className="w-3.5 h-3.5" />
                   </span>
                 </div>
@@ -158,7 +158,7 @@ export const HomeView: React.FC<HomeViewProps> = ({
                   Digital Business & Marketing
                 </div>
                 <h3 className="font-headline text-2xl font-black text-[#0B1F3A] mb-2">
-                  Growth & Marketing Playbooks
+                  How Do India's Top Brands Scale Without Burning Cash?
                 </h3>
                 <p className="text-xs text-stone-600 font-sans leading-relaxed mb-6">
                   Deep strategic teardowns on Zomato's moment marketing, boAt's youth lifestyle tribes, Nykaa's content-to-commerce, and Zerodha's Varsity.
@@ -201,7 +201,7 @@ export const HomeView: React.FC<HomeViewProps> = ({
                   Forensic Business Post-Mortems
                 </div>
                 <h3 className="font-headline text-2xl font-black text-[#0B1F3A] mb-2">
-                  Startup Lessons From Failure
+                  What Can Entrepreneurs Learn From Indian Startup Failures?
                 </h3>
                 <p className="text-xs text-stone-600 font-sans leading-relaxed mb-6">
                   Objective case studies examining the unit-economics collapses, blitzscaling traps, and governance failures of Byju's, Doodhwala, Stayzilla, and TinyOwl.

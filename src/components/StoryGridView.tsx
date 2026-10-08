@@ -59,8 +59,11 @@ export const StoryGridView: React.FC<StoryGridViewProps> = ({
           <h1 className="font-headline text-4xl sm:text-5xl font-black text-[#0B1F3A] tracking-tight">
             10 Launch Startup Stories
           </h1>
-          <p className="text-stone-600 text-base sm:text-lg mt-3 font-sans leading-relaxed">
-            The complete collection of in-depth case studies documenting Indian entrepreneurship, unit economics, platform architecture, and strategic decisions.
+          <h2 className="font-headline text-lg sm:text-xl font-bold text-[#0B1F3A] mt-3">
+            What Startup Stories Are Documented in This Editorial Archive?
+          </h2>
+          <p className="text-stone-600 text-sm mt-1 font-sans leading-relaxed">
+            Each case study examines real founding moments, consumer friction, unit economics, technology scaling, and marketing playbooks across India's premier enterprises.
           </p>
         </div>
 

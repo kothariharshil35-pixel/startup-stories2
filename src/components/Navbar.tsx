@@ -97,6 +97,7 @@ export const Navbar: React.FC<NavbarProps> = ({
               aria-label="Saved Reading List"
             >
               <Bookmark className="w-4 h-4" />
+              <span className="sr-only">View Saved Reading List</span>
               {bookmarksCount > 0 && (
                 <span className="absolute -top-1 -right-1 bg-[#FF7A00] text-white text-[10px] font-bold rounded-full w-4 h-4 flex items-center justify-center">
                   {bookmarksCount}
@@ -111,6 +112,7 @@ export const Navbar: React.FC<NavbarProps> = ({
               aria-label="Toggle navigation menu"
             >
               {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+              <span className="sr-only">Toggle navigation menu</span>
             </button>
           </div>
         </div>

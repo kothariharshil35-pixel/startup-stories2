@@ -16,9 +16,11 @@ import {
   Award,
   ChevronRight,
   Sparkles,
-  Copy
+  Copy,
+  Tag
 } from 'lucide-react';
 import { Story, STORIES } from '../data/stories';
+import { STORY_PAGES_SEO } from '../data/seoKeywords';
 
 interface StoryViewProps {
   story: Story;
@@ -109,7 +111,7 @@ export const StoryView: React.FC<StoryViewProps> = ({
             className="flex items-center gap-1.5 text-xs font-bold text-stone-700 hover:text-[#0B1F3A] uppercase tracking-wider transition-colors cursor-pointer"
           >
             <ArrowLeft className="w-4 h-4" />
-            <span>Back to All Stories</span>
+            <span>Back to All Startup Stories</span>
           </button>
 
           <div className="flex items-center gap-2 sm:gap-3 text-xs text-stone-600">
@@ -243,20 +245,41 @@ export const StoryView: React.FC<StoryViewProps> = ({
               <span className="text-emerald-700 font-medium">Updated: {story.updatedDate}</span>
             </div>
           </div>
+
+          {/* Main Keyword and 2 Related Keywords */}
+          {STORY_PAGES_SEO[story.id] && (
+            <div className="flex flex-wrap items-center gap-x-3 gap-y-1 text-xs text-stone-700 bg-stone-100/80 p-2.5 rounded-xs border border-stone-200">
+              <span className="font-bold text-stone-900 uppercase tracking-wider text-[10px] flex items-center gap-1">
+                <Tag className="w-3 h-3 text-[#FF7A00]" />
+                Target Keywords:
+              </span>
+              <span>
+                <span className="text-stone-400 font-normal">Main:</span>{' '}
+                <strong className="text-[#0B1F3A]">{STORY_PAGES_SEO[story.id].mainKeyword}</strong>
+              </span>
+              <span className="text-stone-300">•</span>
+              <span>
+                <span className="text-stone-400 font-normal">Related:</span>{' '}
+                <span className="text-stone-800 font-medium">{STORY_PAGES_SEO[story.id].relatedKeywords[0]}</span>
+                <span className="text-stone-300 mx-1.5">/</span>
+                <span className="text-stone-800 font-medium">{STORY_PAGES_SEO[story.id].relatedKeywords[1]}</span>
+              </span>
+            </div>
+          )}
         </div>
 
-        {/* IMAGE 1: REAL HERO IMAGE per PRD Section 11 & Section 12 */}
-        <figure className="mb-10 bg-white border border-stone-300 rounded-xs overflow-hidden shadow-xs">
+        {/* IMAGE 1: REAL HERO IMAGE per PRD Section 11 & Section 12 (Compact Height) */}
+        <figure className="mb-8 bg-white border border-stone-300 rounded-xs overflow-hidden shadow-xs">
           <img
             src={story.heroImage.url}
             alt={story.title}
-            className="w-full h-80 sm:h-96 lg:h-[460px] object-cover"
+            className="w-full h-44 sm:h-52 md:h-56 object-cover"
           />
           <figcaption className="p-3 bg-white text-xs text-stone-600 font-sans border-t border-stone-200">
-            <p>{story.heroImage.caption}</p>
+            <p className="font-medium text-stone-800">{story.heroImage.caption}</p>
             {/* Image credit strictly per Section 12 */}
-            <p className="text-[11px] text-stone-400 mt-1 font-semibold">
-              Image credit: <span className="text-stone-700">{story.heroImage.credit}</span>
+            <p className="text-[11px] text-stone-500 mt-1">
+              <strong>Image credit:</strong> <span className="text-stone-700">{story.heroImage.credit}</span>
             </p>
           </figcaption>
         </figure>
@@ -327,10 +350,10 @@ export const StoryView: React.FC<StoryViewProps> = ({
             ))}
           </div>
 
-          {/* Section: The Beginning */}
+          {/* Section: The Beginning (Question-Answer Format for AEO) */}
           <section className="pt-4">
             <h2 className="font-headline text-2xl sm:text-3xl font-extrabold text-[#0B1F3A] mb-4 pb-2 border-b border-stone-200">
-              The Beginning
+              How Did {story.company} Get Started and Find Its Initial Idea?
             </h2>
             <div className="space-y-4 font-sans leading-relaxed">
               {story.theBeginning.map((p, idx) => (
@@ -339,26 +362,26 @@ export const StoryView: React.FC<StoryViewProps> = ({
             </div>
           </section>
 
-          {/* IMAGE 2: FOUNDER PORTRAIT per PRD Section 12 */}
-          <figure className="my-8 bg-white border border-stone-300 rounded-xs overflow-hidden shadow-xs">
+          {/* IMAGE 2: FOUNDER PORTRAIT per PRD Section 12 (Compact Size) */}
+          <figure className="my-6 max-w-lg mx-auto bg-white border border-stone-300 rounded-xs overflow-hidden shadow-xs">
             <img
               src={story.founderImage.url}
               alt={`Founder portrait of ${story.company}`}
-              className="w-full h-72 sm:h-80 object-cover"
+              className="w-full h-44 sm:h-48 object-cover"
             />
             <figcaption className="p-3 bg-white text-xs text-stone-600 font-sans border-t border-stone-200">
-              <p>{story.founderImage.caption}</p>
+              <p className="font-medium text-stone-800">{story.founderImage.caption}</p>
               {/* Image credit strictly per Section 12 */}
-              <p className="text-[11px] text-stone-400 mt-1 font-semibold">
-                Image credit: <span className="text-stone-700">{story.founderImage.credit}</span>
+              <p className="text-[11px] text-stone-500 mt-1">
+                <strong>Image credit:</strong> <span className="text-stone-700">{story.founderImage.credit}</span>
               </p>
             </figcaption>
           </figure>
 
-          {/* Section: The Problem */}
+          {/* Section: The Problem (Question-Answer Format for AEO) */}
           <section className="pt-4">
             <h2 className="font-headline text-2xl sm:text-3xl font-extrabold text-[#0B1F3A] mb-4 pb-2 border-b border-stone-200">
-              The Problem
+              What Problem in the Indian Market Was {story.company} Solving?
             </h2>
             <div className="space-y-4 font-sans leading-relaxed">
               {story.theProblem.map((p, idx) => (
@@ -367,10 +390,10 @@ export const StoryView: React.FC<StoryViewProps> = ({
             </div>
           </section>
 
-          {/* Section: Technology & Product */}
+          {/* Section: Technology & Product (Question-Answer Format for AEO) */}
           <section className="pt-4">
             <h2 className="font-headline text-2xl sm:text-3xl font-extrabold text-[#0B1F3A] mb-4 pb-2 border-b border-stone-200">
-              Technology & Platform Architecture
+              What Technology Architecture Powered {story.company}'s Scaling?
             </h2>
             <div className="space-y-4 font-sans leading-relaxed">
               {story.technologyAndProduct.map((p, idx) => (
@@ -379,26 +402,26 @@ export const StoryView: React.FC<StoryViewProps> = ({
             </div>
           </section>
 
-          {/* IMAGE 3: PRODUCT / PLATFORM IMAGE per PRD Section 12 */}
-          <figure className="my-8 bg-white border border-stone-300 rounded-xs overflow-hidden shadow-xs">
+          {/* IMAGE 3: PRODUCT / PLATFORM IMAGE per PRD Section 12 (Compact Size) */}
+          <figure className="my-6 max-w-lg mx-auto bg-white border border-stone-300 rounded-xs overflow-hidden shadow-xs">
             <img
               src={story.productImage.url}
               alt={`Product interface of ${story.company}`}
-              className="w-full h-72 sm:h-80 object-cover"
+              className="w-full h-44 sm:h-48 object-cover"
             />
             <figcaption className="p-3 bg-white text-xs text-stone-600 font-sans border-t border-stone-200">
-              <p>{story.productImage.caption}</p>
+              <p className="font-medium text-stone-800">{story.productImage.caption}</p>
               {/* Image credit strictly per Section 12 */}
-              <p className="text-[11px] text-stone-400 mt-1 font-semibold">
-                Image credit: <span className="text-stone-700">{story.productImage.credit}</span>
+              <p className="text-[11px] text-stone-500 mt-1">
+                <strong>Image credit:</strong> <span className="text-stone-700">{story.productImage.credit}</span>
               </p>
             </figcaption>
           </figure>
 
-          {/* Section: Business Model */}
+          {/* Section: Business Model (Question-Answer Format for AEO) */}
           <section className="pt-4">
             <h2 className="font-headline text-2xl sm:text-3xl font-extrabold text-[#0B1F3A] mb-4 pb-2 border-b border-stone-200">
-              Business Model & Economics
+              What Is {story.company}'s Business Model and Revenue Engine?
             </h2>
             <div className="space-y-4 font-sans leading-relaxed">
               {story.businessModel.map((p, idx) => (
@@ -407,10 +430,10 @@ export const StoryView: React.FC<StoryViewProps> = ({
             </div>
           </section>
 
-          {/* Section: Marketing Strategy */}
+          {/* Section: Marketing Strategy (Question-Answer Format for AEO) */}
           <section className="pt-4">
             <h2 className="font-headline text-2xl sm:text-3xl font-extrabold text-[#0B1F3A] mb-4 pb-2 border-b border-stone-200">
-              Marketing Strategy
+              How Did {story.company} Approach Marketing and Customer Acquisition?
             </h2>
             <div className="space-y-4 font-sans leading-relaxed">
               {story.marketingStrategy.map((p, idx) => (
@@ -419,10 +442,10 @@ export const StoryView: React.FC<StoryViewProps> = ({
             </div>
           </section>
 
-          {/* Section: Challenges */}
+          {/* Section: Challenges (Question-Answer Format for AEO) */}
           <section className="pt-4">
             <h2 className="font-headline text-2xl sm:text-3xl font-extrabold text-[#0B1F3A] mb-4 pb-2 border-b border-stone-200">
-              Key Challenges Faced
+              What Critical Challenges Did {story.company} Overcome While Growing?
             </h2>
             <div className="space-y-4 font-sans leading-relaxed">
               {story.challenges.map((p, idx) => (
@@ -431,10 +454,10 @@ export const StoryView: React.FC<StoryViewProps> = ({
             </div>
           </section>
 
-          {/* Section: Lessons (Numbered Takeaways) */}
+          {/* Section: Lessons (Question-Answer Format for AEO) */}
           <section className="pt-6">
             <h2 className="font-headline text-2xl sm:text-3xl font-extrabold text-[#0B1F3A] mb-6 pb-2 border-b border-stone-200">
-              Key Lessons for Entrepreneurs & Students
+              What Are the Key Entrepreneurship Lessons From {story.company}?
             </h2>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -457,11 +480,11 @@ export const StoryView: React.FC<StoryViewProps> = ({
             </div>
           </section>
 
-          {/* Section: Final Takeaway */}
+          {/* Section: Final Takeaway (Question-Answer Format for AEO) */}
           <section className="pt-6">
             <div className="bg-[#0B1F3A] text-white p-6 sm:p-8 rounded-xs shadow-md border-l-4 border-[#FF7A00]">
               <span className="text-xs font-black uppercase tracking-widest text-[#FF7A00] block mb-2">
-                FINAL TAKEAWAY
+                What Is the Strategic Takeaway From {story.company}?
               </span>
               <p className="font-editorial text-lg sm:text-xl text-stone-100 leading-relaxed italic">
                 "{story.finalTakeaway}"
@@ -588,7 +611,7 @@ export const StoryView: React.FC<StoryViewProps> = ({
                     </h4>
                   </div>
                   <div className="mt-4 pt-2 border-t border-stone-100 flex items-center justify-between text-xs font-bold text-stone-700 group-hover:text-[#FF7A00]">
-                    <span>Read Story</span>
+                    <span>Read {rel.company} Case Study</span>
                     <ChevronRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                   </div>
                 </div>

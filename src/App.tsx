@@ -12,7 +12,9 @@ import { MarketingView } from './components/MarketingView';
 import { FailuresView } from './components/FailuresView';
 import { IndustriesView } from './components/IndustriesView';
 import { AboutView } from './components/AboutView';
+import { PageKeywordsBanner } from './components/PageKeywordsBanner';
 import { STORIES, getStoryById } from './data/stories';
+import { getPageSEO, updateDocumentSEO } from './data/seoKeywords';
 
 export default function App() {
   const [currentTab, setCurrentTab] = useState<string>('home');
@@ -66,6 +68,11 @@ export default function App() {
   };
 
   const activeStory = getStoryById(selectedStoryId) || STORIES[0];
+  const currentSEO = getPageSEO(currentTab, selectedStoryId);
+
+  useEffect(() => {
+    updateDocumentSEO(currentSEO);
+  }, [currentSEO]);
 
   return (
     <div className="min-h-screen flex flex-col bg-[#F7F5F0] text-[#171717] font-sans">
@@ -77,6 +84,9 @@ export default function App() {
         bookmarksCount={savedStoryIds.length}
         onOpenBookmarks={() => setIsBookmarksOpen(true)}
       />
+
+      {/* Page Keywords & Taxonomy Banner (Every page displays Main Keyword and 2 Related Keywords) */}
+      <PageKeywordsBanner seo={currentSEO} />
 
       {/* Main View Switcher */}
       <div className="flex-1">

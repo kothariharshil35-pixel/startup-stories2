@@ -22,7 +22,7 @@ export const IndustryCards: React.FC<IndustryCardsProps> = ({
               Sectors & Market Segments
             </div>
             <h2 className="font-headline text-3xl sm:text-4xl font-extrabold text-[#0B1F3A] tracking-tight">
-              Explore Industries
+              What Are the Key Sectors Powering Indian Entrepreneurship?
             </h2>
           </div>
           <button
@@ -78,7 +78,7 @@ export const IndustryCards: React.FC<IndustryCardsProps> = ({
 
               {/* Bottom Card Action */}
               <div className="mt-5 pt-3 border-t border-stone-100 flex items-center justify-between text-xs font-bold text-[#0B1F3A] group-hover:text-[#FF7A00] transition-colors">
-                <span>View Stories</span>
+                <span>Explore {ind.name} Stories</span>
                 <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
               </div>
             </div>

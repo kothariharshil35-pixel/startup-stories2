@@ -24,13 +24,13 @@ export const FeaturedStory: React.FC<FeaturedStoryProps> = ({ onReadStory }) => 
 
         {/* Big Editorial Spotlight Card */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center bg-[#F7F5F0] border border-stone-300 p-6 sm:p-10 rounded-xs shadow-xs">
-          {/* Real Photographic Visual matching Section 12 */}
-          <div className="lg:col-span-6 relative">
+          {/* Real Photographic Visual matching Section 12 (Compact Height) */}
+          <div className="lg:col-span-5 relative">
             <div className="overflow-hidden border border-stone-300 rounded-xs bg-stone-900">
               <img
                 src="https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?auto=format&fit=crop&w=1200&q=80"
                 alt="Stock exchange algorithmic screen and trading desks"
-                className="w-full h-80 sm:h-96 object-cover hover:scale-103 transition-transform duration-500"
+                className="w-full h-48 sm:h-56 md:h-60 object-cover hover:scale-103 transition-transform duration-500"
               />
             </div>
             {/* Caption & Image credit strictly adhering to Section 12 */}
@@ -40,7 +40,7 @@ export const FeaturedStory: React.FC<FeaturedStoryProps> = ({ onReadStory }) => 
           </div>
 
           {/* Editorial Content Column strictly matching Section 7 */}
-          <div className="lg:col-span-6 space-y-5">
+          <div className="lg:col-span-7 space-y-4">
             {/* Metadata (Category & Reading Time) */}
             <div className="flex items-center gap-3 text-xs font-semibold tracking-wider uppercase text-stone-600">
               <span className="text-[#0B1F3A] font-extrabold">ZERODHA</span>
@@ -84,7 +84,7 @@ export const FeaturedStory: React.FC<FeaturedStoryProps> = ({ onReadStory }) => 
                 onClick={() => onReadStory('zerodha')}
                 className="bg-[#0B1F3A] hover:bg-[#FF7A00] text-white font-headline font-bold text-sm sm:text-base px-6 py-3.5 rounded-xs transition-colors cursor-pointer flex items-center gap-2 group shadow-sm"
               >
-                <span>Read Full Story</span>
+                <span>Read Full Zerodha Case Study</span>
                 <ArrowRight className="w-4 h-4 group-hover:translate-x-1.5 transition-transform" />
               </button>
             </div>

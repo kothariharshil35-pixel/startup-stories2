@@ -74,7 +74,7 @@ export const AboutView: React.FC = () => {
               ETHICS & INTEGRITY
             </span>
             <h2 className="font-headline text-3xl font-extrabold text-[#0B1F3A]">
-              Editorial Policy: What We Believe
+              What Is Our Editorial Policy and Verification Standard?
             </h2>
             <p className="text-stone-600 text-sm mt-1 font-sans">
               Every case study published on this platform adheres to five non-negotiable verification rules.
@@ -166,7 +166,7 @@ export const AboutView: React.FC = () => {
             Curriculum & Classroom Use
           </div>
           <h2 className="font-headline text-2xl sm:text-3xl font-extrabold text-white mb-4">
-            How College Students Can Use These Case Studies
+            How Can College Students Use These Case Studies for Research?
           </h2>
           <p className="text-stone-300 text-sm leading-relaxed font-sans mb-6">
             Designed for students enrolled in BBA, MBA, Digital Business, Entrepreneurship, and Corporate Finance programs across Indian universities and global business schools.
